@@ -1,0 +1,7 @@
+data/org.blankon.blankonWelcome.desktop.in
+data/org.blankon.blankonWelcome.appdata.xml.in
+data/org.blankon.blankonWelcome.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+
