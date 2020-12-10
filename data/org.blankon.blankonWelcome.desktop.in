@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=blankon-welcome
+Name=BlankOn Welcome
 Exec=blankon-welcome
 Terminal=false
 Type=Application
