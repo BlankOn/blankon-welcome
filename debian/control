@@ -3,7 +3,7 @@ Section: gnome
 Priority: optional
 Maintainer: BlankOn Developers <BlankOn-dev@googlegroups.com>
 Uploaders: Herpiko Dwi Aguno <herpiko@gmail.com>
-Build-Depends: debhelper (>= 9), meson
+Build-Depends: debhelper (>= 9), meson, libglib2.0-dev
 Standards-Version: 3.9.6
 Vcs-Git: https://gitlab.com/blankon/blankon-welcome.git
 
