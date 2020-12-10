@@ -1,0 +1,10 @@
+7f3db2fe866c9b4a809f23cc28184c74  usr/bin/blankon-welcome
+cd035e100b9404fee8d08e58cbf96d72  usr/share/appdata/org.blankon.blankonWelcome.appdata.xml
+6c48e0b56a3a2c02b39355cbd148ade7  usr/share/applications/org.blankon.blankonWelcome.desktop
+284f86316608f91eeb07b2cb3a695573  usr/share/blankon-welcome/blankon-welcome.gresource
+d41d8cd98f00b204e9800998ecf8427e  usr/share/blankon-welcome/blankon_welcome/__init__.py
+7d81770f53097186d5101d8d0b876715  usr/share/blankon-welcome/blankon_welcome/main.py
+3b3fe9373fb4d45303c35c4ca12d541f  usr/share/blankon-welcome/blankon_welcome/window.py
+4f79233bf4a727f7277e2c739f6de476  usr/share/doc/blankon-welcome/changelog.gz
+40b8063d32a1cd9076b019ea0bb97588  usr/share/doc/blankon-welcome/copyright
+91f55159847d8ae175eb8e65bfcaaebd  usr/share/glib-2.0/schemas/org.blankon.blankonWelcome.gschema.xml

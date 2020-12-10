@@ -1,0 +1,9 @@
+Package: blankon-welcome
+Version: 0.0.1
+Architecture: all
+Maintainer: BlankOn Developers <BlankOn-dev@googlegroups.com>
+Installed-Size: 99
+Depends: dconf-gsettings-backend | gsettings-backend, gtk3
+Section: gnome
+Priority: optional
+Description: BlankOn welcome and accessibility app.

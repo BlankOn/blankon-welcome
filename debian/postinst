@@ -1,0 +1,9 @@
+src/blankon-welcome.in /usr/bin/blankon-welcome
+data/org.blankon.blankonWelcome.appdata.xml.in /usr/share/appdata/org.blankon.blankonWelcome.appdata.xml
+data/org.blankon.blankonWelcome.desktop.in /usr/share/applications/org.blankon.blankonWelcome.desktop
+data/org.blankon.blankonWelcome.gschema.xml /usr/share/glib-2.0/schemas/org.blankon.blankonWelcome.gschema.xml
+src/*.py /usr/share/blankon-welcome/blankon-welcome/
+src/*.ui /usr/share/blankon-welcome/blankon-welcome/
+src/*.xml /usr/share/blankon-welcome/blankon-welcome/
+
+

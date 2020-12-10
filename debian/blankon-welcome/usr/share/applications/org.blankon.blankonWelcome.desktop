@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=BlankOn Welcome
+Exec=blankon-welcome
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true
