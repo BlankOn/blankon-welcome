@@ -45,6 +45,8 @@ class BlankonWelcomeWindow(Gtk.ApplicationWindow):
     PointingButton = Gtk.Template.Child()
 
     SeeingMagnifierSwitch = Gtk.Template.Child()
+    SeeingLargeTextSwitch = Gtk.Template.Child()
+    SeeingHighContrastSwitch = Gtk.Template.Child()
 
     currentView = "welcome"
 
@@ -57,8 +59,16 @@ class BlankonWelcomeWindow(Gtk.ApplicationWindow):
         self.HearingButton.connect("clicked", self.show_hearing_box)
         self.TypingButton.connect("clicked", self.show_typing_box)
         self.PointingButton.connect("clicked", self.show_pointing_box)
-        self.SeeingMagnifierSwitch.connect("state-set", self.enable_magnifier)
+        self.SeeingMagnifierSwitch.connect("state-set", self.toggle_magnifier)
+        self.SeeingLargeTextSwitch.connect("state-set", self.toggle_large_text)
+        self.SeeingHighContrastSwitch.connect("state-set", self.toggle_high_contrast)
 
+        # Set default values
+        setting = Gio.Settings.new("org.gnome.desktop.interface")
+        current_value = setting.get_value("gtk-theme")
+        print(current_value)
+        if ("Contrast" in current_value.get_string()):
+            self.SeeingHighContrastSwitch.set_active(True)
 
     def do_skip_back(self, button):
         if self.currentView == "welcome" or self.currentView == "a11y":
@@ -105,10 +115,31 @@ class BlankonWelcomeWindow(Gtk.ApplicationWindow):
         self.SkipBackButton.set_label("Back")
         self.Stacks.set_visible_child(self.PointingBox)
 
-    def enable_magnifier(self, switch, state):
+    def toggle_magnifier(self, switch, state):
         setting = Gio.Settings.new("org.gnome.desktop.a11y.applications")
         bool_value = GLib.Variant("b", state)
         setting.set_value("screen-magnifier-enabled", bool_value)
+
+    def toggle_high_contrast(self, switch, state):
+        setting = Gio.Settings.new("org.gnome.desktop.interface")
+        default_value = setting.get_default_value("gtk-theme")
+        current_value = setting.get_value("gtk-theme")
+        high_contrast_value = GLib.Variant("s", "HighContrast")
+        print(state)
+        print(default_value)
+        print(current_value)
+        if (state):
+            print(high_contrast_value)
+            setting.set_value("gtk-theme", high_contrast_value)
+        else:
+            setting.set_value("gtk-theme", default_value)
+
+    def toggle_large_text(self, switch, state):
+        setting = Gio.Settings.new("org.gnome.desktop.interface")
+        scale_value = GLib.Variant("d", 1.0)
+        if (state):
+            scale_value = GLib.Variant("d", 1.5)
+        setting.set_value("text-scaling-factor", scale_value)
 
     def send_analytic(self):
         print("Send analytic data...")
